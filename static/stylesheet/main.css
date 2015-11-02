@@ -1,0 +1,135 @@
+* { 
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.clearfix:after {
+	content: '.';
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+.container {
+	font-size: 12px;
+	margin: 1.5em auto;
+	position: relative;
+	text-align: center;
+}
+
+
+/*common*/
+nav {
+	border: 2px green solid;
+}
+
+/*index*/
+header a {
+	display: inline-block;
+}
+
+header img {
+	display: inline-block;
+}
+
+header h1 {
+	display: inline-block;
+}
+
+.about, .login {
+	border: 2px green solid;
+	float: left;
+	width: 48%;
+}
+
+.about img {
+	border: 2px red solid;
+	width: 40%;
+}
+
+.about p {
+	border: 2px yellow solid;
+	display: inline-block;
+	width: 40%;
+}
+
+.login input {
+	width: 16em;
+}
+
+#forgot {
+	display: inline-block;
+}
+
+/*goal*/
+
+.goal_form_label {
+	display: inline-block;
+}
+
+.goal_input_gram, .goal_input_percent {
+	width: 8em;
+}
+
+.goal_header_p {
+	display: inline-block;
+}
+
+.goal_header_h {
+	display: inline-block;
+}
+
+.goal_header_span {
+	color: blue;
+}
+
+/*diary*/
+table, th, td {
+	border: 1px black solid ;
+	border-collapse: collapse;
+}
+
+
+
+/*add*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
