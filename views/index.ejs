@@ -2,12 +2,61 @@
 	
 	<img src='/images/logo_50.jpg' alt='Bacon logo' title='Eat more bacon'>
 	<h1>Eat more bacon and loose weight</h1>
-	<a href='#' class='btn btn-primary'>Sign up</a>
+
+	<a id="modal_trigger" href="#modal" class="btn btn-primary">Sign Up</a>
+
+	<div id="modal" class="popupContainer" style="display:none;">
+		<section class="popupHeader">
+			<span class="header_title">Sign up</span>
+			<span class="modal_close"><i class="fa fa-times"></i></span>
+		</section>
+
+		<section class="popupBody">
+
+			<div class="user_register">
+				<form>
+					<label>First name</label>
+					<input type="text" placeholder='Russell'>
+					</br>
+
+					<label>Last name</label>
+					<input type="text" placeholder='Wilson'>
+					</br>
+
+					<label>Username</label>
+					<input type="text" placeholder='seattle'>
+					</br>
+
+					<label>Password</label>
+					<input type="password" placeholder='seahawks'>
+					</br>
+
+					<label>Email Address</label>
+					<input type="email" placeholder='pete@carroll.com'>
+					</br>
+
+					<div class="action_btns">
+						<div>
+							<a href="#" class="btn btn_red">Register</a>
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</section>
+	</div>
+	
+
+
 	
 	<hr>
 </header>	
 
 <main>
+
+	
+
+	
 
 	<article class='about'>
 		<h2>How to enjoy delicious bacon and loose that love handle</h2>
@@ -37,9 +86,18 @@
 
 	</article>
 
-	
-	
-
 </main>
+
+<script type="text/javascript">
+	$("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_close" });
+	$(function(){
+		
+		$(".user_register").show();
+
+	})
+
+
+</script>
+
 
 	

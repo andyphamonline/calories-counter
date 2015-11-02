@@ -3,10 +3,9 @@ module.exports = function(sequelize, DataTypes) {
   var user = sequelize.define('user', {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
-    age: DataTypes.INTEGER,
-    sex: DataTypes.STRING,
     username: DataTypes.STRING,
-    password: DataTypes.STRING
+    password: DataTypes.STRING,
+    email: DataTypes.STRING,
   }, {
     classMethods: {
       associate: function(models) {
