@@ -33,7 +33,10 @@
 .user_register label {display: block; margin-bottom:5px;}
 .user_register input[type="text"], .user_register input[type="email"], .user_register input[type="password"] {display: block; width:90%; padding: 10px; border:1px solid #DDD; color:#666;}
 
-.btn {padding:10px 20px; background: #F4F4F2;}
+.btn {
+	padding:10px 20px; 
+	/*background: #F4F4F2;*/
+}
 .btn_red {background: #ED6347; color: #FFF;}
 
 .btn:hover {background: #E4E4E2;}

@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Frijole);
+@import url(https://fonts.googleapis.com/css?family=Shojumaru);
+
 * { 
 	margin: 0;
 	padding: 0;
@@ -13,15 +16,23 @@
 }
 
 .container {
+	background-color: #606060;
 	font-size: 12px;
+	height: 100vh;
 	margin: 1.5em auto;
 	position: relative;
 	text-align: center;
 }
 
-
-
 /*common*/
+/*font doesn't work*/
+h2 {
+	color: #45E4FF;
+	font-family: 'Shojumaru', cursive;
+	font-size: 2em;
+	font-weight: 400;
+}
+
 nav {
 	border: 2px green solid;
 }
@@ -36,18 +47,22 @@ header img {
 }
 
 header h1 {
+	color: #E8471F;
 	display: inline-block;
+	font-family: 'Frijole', cursive;
+	font-size: 5em;
 }
 
 .about, .login {
 	border: 2px green solid;
 	float: left;
+	margin: 0.5%;
 	width: 48%;
 }
 
 .about img {
 	border: 2px red solid;
-	width: 40%;
+	width: 30%;
 }
 
 .about p {

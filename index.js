@@ -9,24 +9,37 @@ var session = require('express-session');
 var db = require('./models');
 var flash = require('connect-flash');
 
-
-
-
-
 app.use(ejsLayouts);
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(__dirname + '/static'));
 
-app.use(flash());
 app.use(session({
   secret: 'sasdlfkajsldfkajweoriw234234ksdfjals23',
   resave: false,
   saveUninitialized: true
 }));
 
+app.use(flash());
+
+app.use(function(req, res, next) {
+  if (req.session.user) {
+    db.user.findById(req.session.user).then(function(user) {
+      req.currentUser = user;
+      next();
+    });
+  } else {
+    req.currentUser = false;
+    next();
+  }
+});
+
+app.use(function (req, res, next) {
+	res.locals.currentUser = req.currentUser;
+	res.locals.alerts = req.flash();
+	next();
+});
+
 app.set('view engine', 'ejs');
-
-
 
 app.route('/')
 	.get(function(req, res) {
@@ -34,7 +47,7 @@ app.route('/')
 	})
 	.post(function(req, res) {
 		if (req.body.password !== req.body.password2) {
-			console.og('password');
+			console.log('password');
 			req.flash('danger', 'Passwords do not match');
 			res.render('index', {alerts: req.flash()});
 		} 
@@ -52,7 +65,7 @@ app.route('/')
 		        	console.log('if');
 	        		req.session.user = user.id;
 	        		req.flash('success', 'You are signed up and logged in.');
-	        		res.render('goal', {alert: req.flash()});
+	        		res.redirect('/goal');
 		        } else {		  
 		        	console.log('else');      	
 		        	req.flash('danger','A user with that e-mail address already exists.');
@@ -67,10 +80,6 @@ app.route('/')
 		}
 	});
 
-
-
-
-
 ////request works for json file with search term (i.e.sausage); but not all sausages right now
 // app.get('/', function(req, res) {
 // 	request(
@@ -84,7 +93,11 @@ app.route('/')
 // 	)
 // });
 
-
+app.get('/logout', function(req, res) {
+  req.flash('info', 'You have been logged out');
+  req.session.user = false;
+  res.redirect('/');
+});
 
 app.use('/goal', require('./controllers/goal'));
 
