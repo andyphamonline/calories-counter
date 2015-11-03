@@ -9,45 +9,65 @@ var session = require('express-session');
 var db = require('./models');
 var flash = require('connect-flash');
 
+
+
+
+
 app.use(ejsLayouts);
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(__dirname + '/static'));
+
+app.use(flash());
+app.use(session({
+  secret: 'sasdlfkajsldfkajweoriw234234ksdfjals23',
+  resave: false,
+  saveUninitialized: true
+}));
+
 app.set('view engine', 'ejs');
+
+
 
 app.route('/')
 	.get(function(req, res) {
 		res.render('index');
 	})
 	.post(function(req, res) {
-		if (req.body.password != req.body.password2) {
+		if (req.body.password !== req.body.password2) {
+			console.og('password');
 			req.flash('danger', 'Passwords do not match');
-			res.redirect('/');
+			res.render('index', {alerts: req.flash()});
 		} 
 		else {
-			console.log(req.body.email+req.body.firstName+req.body.lastName)
+			console.log('findOrCreate');
 			db.user.findOrCreate({
 				where: {email: req.body.email},
-				defaults: {
-					firstName: req.body.firstName,
-					lastName: req.body.lastName,
-					username: req.body.username,
-					password: req.body.password
+				defaults: {				
+					name: req.body.name,			
+					password: req.body.password					
 				}
-			}).spread(function(user, created) {				
-		        if (created) {
-		          req.session.user = user.id;
-		          req.flash('success', 'You are signed up and logged in.')
-		          res.redirect('/');
-		        } else {
-		        	req.flash('danger', 'A user with that e-mail address already exists.');		          		          
-		        	res.redirect('/');
+
+			}).spread(function(user, created) {		
+		        if (created) {	
+		        	console.log('if');
+	        		req.session.user = user.id;
+	        		req.flash('success', 'You are signed up and logged in.');
+	        		res.render('goal', {alert: req.flash()});
+		        } else {		  
+		        	console.log('else');      	
+		        	req.flash('danger','A user with that e-mail address already exists.');
+               		res.render('index', {alerts: req.flash()});		        	
 		        }
-		    }).catch(function(err) {
+		    })		    
+		    .catch(function(err) {
+		    		console.log(err)
         			req.flash('danger','Error');
-        			res.redirect('/');
+        			res.render('index', {alert: req.flash()});        			
      		});
 		}
 	});
+
+
 
 
 
@@ -63,6 +83,7 @@ app.route('/')
 // 		}
 // 	)
 // });
+
 
 
 app.use('/goal', require('./controllers/goal'));

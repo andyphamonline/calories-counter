@@ -16,17 +16,10 @@
 			<div class="user_register">
 				
 				<form method='POST' action='/'>
-					<label>First name</label>
-					<input name='firstName' type="text" placeholder='i.e. Russell'>
-					</br>
 
-					<label>Last name</label>
-					<input name='lastName' type="text" placeholder='i.e. Wilson'>
-					</br>
-
-					<label>Username</label>
-					<input name='username' type="text" placeholder='i.e. seattle'>
-					</br>
+					<label>Name</label>
+					<input name='name' type="text" placeholder='i.e. Wilson'>
+					</br>					
 
 					<label>Password</label>
 					<input name='password' type="password" placeholder='i.e. seahawks (Min 8 characters)'>
@@ -68,12 +61,12 @@
 		
 		<p>or</p>
 		
-		<form action="" method="POST" role="form">
+		<form action='/goal' method="POST" role="form">
 			<div class="form-group">
-				<label for="name">Username</label>
-				<input type="text" class="form-control" id="name" placeholder="User name">
+				<label for="email">Email</label>
+				<input name='email' type="text" class="form-control" id="email" placeholder="Email">
 				<label for="password">Password</label>
-				<input type="text" class="form-control" id="password" placeholder="Password">
+				<input name='password' type="text" class="form-control" id="password" placeholder="Password">
 			</div>
 		
 			<button type="submit" class="btn btn-primary">Log in</button>
@@ -88,10 +81,9 @@
 
 <script type="text/javascript">
 	$("#modal_trigger").leanModal({top : 100, overlay : 0.6, closeButton: ".modal_close" });
-	$(function(){
-		
-		$(".user_register").show();
 
+	$(function(){
+		$(".user_register").show();
 	})
 
 </script>
