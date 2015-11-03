@@ -14,25 +14,29 @@
 		<section class="popupBody">
 
 			<div class="user_register">
-				<form>
+				<form method='POST' action='/index'>
 					<label>First name</label>
-					<input type="text" placeholder='Russell'>
+					<input name='firstName' type="text" placeholder='i.e. Russell'>
 					</br>
 
 					<label>Last name</label>
-					<input type="text" placeholder='Wilson'>
+					<input name='lastName' type="text" placeholder='i.e. Wilson'>
 					</br>
 
 					<label>Username</label>
-					<input type="text" placeholder='seattle'>
+					<input name='username' type="text" placeholder='i.e. seattle'>
 					</br>
 
 					<label>Password</label>
-					<input type="password" placeholder='seahawks'>
+					<input name='password' type="password" placeholder='i.e. seahawks (Min 8 characters)'>
+					</br>
+
+					<label>Re-enter your password</label>
+					<input name='password2' type="password" placeholder='i.e. seahawks (Min 8 characters)'>
 					</br>
 
 					<label>Email Address</label>
-					<input type="email" placeholder='pete@carroll.com'>
+					<input name='email' type="email" placeholder='i.e. pete@carroll.com'>
 					</br>
 
 					<div class="action_btns">
@@ -46,17 +50,10 @@
 		</section>
 	</div>
 	
-
-
-	
 	<hr>
 </header>	
 
 <main>
-
-	
-
-	
 
 	<article class='about'>
 		<h2>How to enjoy delicious bacon and loose that love handle</h2>
@@ -95,7 +92,6 @@
 		$(".user_register").show();
 
 	})
-
 
 </script>
 

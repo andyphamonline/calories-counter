@@ -5,6 +5,8 @@ var bodyParser = require('body-parser');
 var server = require('http').createServer(app);
 var port = process.env.PORT || 3000;
 var request = require('request');
+var session = require('express-session');
+var db = require('./models');
 
 app.use(ejsLayouts);
 app.use(bodyParser.urlencoded({extended:false}));
@@ -33,5 +35,11 @@ app.use('/goal', require('./controllers/goal'));
 app.use('/diary', require('./controllers/diary'));
 
 app.use('/add', require('./controllers/add'));
+
+app.use(session({
+	secret: 'secret string',
+	resave: false,
+	saveUninitialized: true
+}));
 
 server.listen(port);

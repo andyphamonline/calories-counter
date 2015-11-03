@@ -5,11 +5,14 @@ module.exports = function(sequelize, DataTypes) {
     lastName: DataTypes.STRING,
     username: DataTypes.STRING,
     password: DataTypes.STRING,
+    password2: DataTypes.STRING,
     email: DataTypes.STRING,
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        models.user.hasMany(models.provider);
+        models.user.belongsToMany(models.nutrient, {through: 'usersnutrients'});
+        models.user.belongsToMany(models.food, {through: 'usersfoods'});
       }
     }
   });
