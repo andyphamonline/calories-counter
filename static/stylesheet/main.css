@@ -105,10 +105,11 @@ header h1 {
 table, th, td {
 	border: 1px black solid ;
 	border-collapse: collapse;
+	text-align: center;
 }
 
 th, td {
-	width: 3em;
+	width: 8em;
 }
 
 

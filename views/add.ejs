@@ -1,16 +1,34 @@
 <header>
 
-	<p class='goal_header_p'>Hi, <span class='goal_header_span'>username</span></p>
-	<h1 class='goal_header_h'>Add food</h1>
 	<img class='goal_header_img' src='/images/logo_50.jpg' alt='Bacon logo' title='Eat more bacon'>
-	<hr>
+	<h1 class='goal_header_h'>Add Food</h1>
+	<p class='goal_header_p'>Hi, <span class='goal_header_span'><%= currentUser.name %></span></p>
 
 	<nav>
 		<a href='/goal' class='btn btn-primary'>Goal</a>
-		<a href='/diary' class='btn btn-primary'>Daily Summary</a>
+		<a href='/diary' class='btn btn-primary'>Diary</a>
 		<a href='/add' class='btn btn-primary'>Add Food</a>
+		<a href = '/logout' class="btn btn-primary">Log out</a>
 
 	</nav>
-	</hr>
 
 </header>
+
+<main>
+
+	<form action="" method="GET" role="form">
+	
+		<div class="form-group">
+			<input type="text" class="form-control" id="" placeholder="i.e. cheese">
+		</div>
+	
+		<button type="submit" class="btn btn-primary">Search</button>
+	</form>
+
+	<div class="well">
+		
+	</div>
+
+
+
+</main>

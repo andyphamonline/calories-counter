@@ -2,7 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res) {
-	res.render('diary');
+	var goal = {
+		calories : req.query.calories,
+		carb: req.query.carb,
+		fat: req.query.fat,
+		protein: req.query.protein
+	}
+	res.render('diary', {goal: goal});
 });
 
 

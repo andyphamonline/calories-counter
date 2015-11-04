@@ -4,7 +4,7 @@ var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var server = require('http').createServer(app);
 var port = process.env.PORT || 3000;
-var request = require('request');
+
 var session = require('express-session');
 var db = require('./models');
 var flash = require('connect-flash');
@@ -22,6 +22,10 @@ app.use(session({
 app.use(flash());
 
 app.use(function(req, res, next) {
+	//take it out when deploy, this line to hardwire session.user to userId = 1
+	req.session.user = 1;
+	//
+	
   if (req.session.user) {
     db.user.findById(req.session.user).then(function(user) {
       req.currentUser = user;
@@ -77,19 +81,6 @@ app.route('/')
      		});
 		}
 	});
-
-////request works for json file with search term (i.e.sausage); but not all sausages right now
-// app.get('/', function(req, res) {
-// 	request(
-// 		'http://api.nal.usda.gov/ndb/search/?format=json&q=sausage&sort=n&max=25&offset=0&api_key=' + process.env.USDA_KEY,
-// 		function(error, response, body) {
-// 			if (!error && response.statusCode === 200) {
-// 				var data = JSON.parse(body);
-// 				res.send(data);
-// 			}
-// 		}
-// 	)
-// });
 
 app.get('/logout', function(req, res) {
   req.flash('info', 'You have been logged out');

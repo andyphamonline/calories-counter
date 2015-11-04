@@ -14,6 +14,9 @@ module.exports = {
       nutrientId: {
         type: Sequelize.INTEGER
       },
+      date: {
+        type: Sequelize.DATEONLY
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
