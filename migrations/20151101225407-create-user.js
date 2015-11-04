@@ -17,6 +17,18 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       },
+      calories: {
+        type: Sequelize.INTEGER
+      },
+      carbPercent: {
+        type: Sequelize.INTEGER
+      },
+      fatPercent: {
+        type: Sequelize.INTEGER
+      },
+      proteinPercent: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

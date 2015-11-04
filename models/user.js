@@ -5,6 +5,10 @@ module.exports = function(sequelize, DataTypes) {
     name: DataTypes.STRING,
     password: DataTypes.STRING,
     email: DataTypes.STRING,
+    calories: DataTypes.INTEGER,
+    carbPercent: DataTypes.INTEGER,
+    fatPercent: DataTypes.INTEGER,
+    proteinPercent: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {

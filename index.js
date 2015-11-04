@@ -47,33 +47,31 @@ app.route('/')
 	})
 	.post(function(req, res) {
 		if (req.body.password !== req.body.password2) {
-			console.log('password');
 			req.flash('danger', 'Passwords do not match');
-			res.render('index', {alerts: req.flash()});
+			res.render('index');
 		} 
 		else {
-			console.log('findOrCreate');
 			db.user.findOrCreate({
 				where: {email: req.body.email},
 				defaults: {				
 					name: req.body.name,			
-					password: req.body.password					
+					password: req.body.password,
+					calories: 1500,
+					carbPercent: 5,
+					fatPercent: 75,
+					proteinPercent: 20
 				}
-
-			}).spread(function(user, created) {		
-		        if (created) {	
-		        	console.log('if');
+			}).spread(function(user, created) {
+		        if (created) {			        
 	        		req.session.user = user.id;
 	        		req.flash('success', 'You are signed up and logged in.');
 	        		res.redirect('/goal');
-		        } else {		  
-		        	console.log('else');      	
+		        } else {		  		          	
 		        	req.flash('danger','A user with that e-mail address already exists.');
                		res.render('index', {alerts: req.flash()});		        	
 		        }
 		    })		    
-		    .catch(function(err) {
-		    		console.log(err)
+		    .catch(function(err) {		    	
         			req.flash('danger','Error');
         			res.render('index', {alert: req.flash()});        			
      		});

@@ -1,21 +1,22 @@
 <header>
 
-	<p class='goal_header_p'>Hi, <span class='goal_header_span'>username</span></p>
-	<h1 class='goal_header_h'>Diary</h1>
 	<img class='goal_header_img' src='/images/logo_50.jpg' alt='Bacon logo' title='Eat more bacon'>
-	<hr>
+	<h1 class='goal_header_h'>Diary</h1>
+	<p class='goal_header_p'>Hi, <span class='goal_header_span'><%= currentUser.name %></span></p>
 
 	<nav>
 		<a href='/goal' class='btn btn-primary'>Goal</a>
-		<a href='/diary' class='btn btn-primary'>Daily Summary</a>
+		<a href='/diary' class='btn btn-primary'>Diary</a>
 		<a href='/add' class='btn btn-primary'>Add Food</a>
+		<a href = '/logout' class="btn btn-primary">Log out</a>
 
 	</nav>
-	</hr>
 
 </header>
 
 <main>
+
+<p>Date: <input type="text" id="datepicker"></p>
 
 	<table>
 		<tr>
@@ -32,9 +33,10 @@
 	<table>
 		<tr>
 			<th>Total</th>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
 		</tr>
 
 		<tr>
@@ -42,10 +44,12 @@
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
+			<td>&nbsp;</td>
 		</tr>
 
 		<tr>
 			<th>Remaining</th>
+			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
@@ -57,4 +61,10 @@
 
 
 </main>
+
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+</script>
 

@@ -25,7 +25,6 @@
 }
 
 /*common*/
-/*font doesn't work*/
 h2 {
 	color: #45E4FF;
 	font-family: 'Shojumaru', cursive;
@@ -108,6 +107,9 @@ table, th, td {
 	border-collapse: collapse;
 }
 
+th, td {
+	width: 3em;
+}
 
 
 /*add*/

@@ -4,11 +4,9 @@
 	<h1 class='goal_header_h'>Your daily goals</h1>
 	<p class='goal_header_p'>Hi, <span class='goal_header_span'><%= currentUser.name %></span></p>
 
-	
-
 	<nav>
 		<a href='/goal' class='btn btn-primary'>Goal</a>
-		<a href='/diary' class='btn btn-primary'>Daily Summary</a>
+		<a href='/diary' class='btn btn-primary'>Diary</a>
 		<a href='/add' class='btn btn-primary'>Add Food</a>
 		<a href = '/logout' class="btn btn-primary">Log out</a>
 
@@ -23,28 +21,83 @@
 
 		<div class="form-group">
 			<label class='goal_form_label' for="">Calories</label>
-			<input class='goal_input_gram' id='' type="text" class="form-control">
+			<input class='goal_input_gram' id='' type="text" class="form-control" value='<%= user.calories %>'>
 			<br>
 
 			<label class='goal_form_label' for="">Carbohydrate</label>
-			<input class='goal_input_gram' id='' type="text" class="form-control">
-			<input class='goal_input_percent' id='' type="text" class="form-control">
+			<input class='goal_input_gram' id='' type="text" class="form-control" value='<%= (user.carbPercent * user.calories) / 100 %>'>
+			<input class='goal_input_percent' id='' type="text" class="form-control" value='<%= user.carbPercent %>%'>
 			<br>
 
 			<label class='goal_form_label' for="">Fat</label>
-			<input class='goal_input_gram' id='' type="text" class="form-control">
-			<input class='goal_input_percent' id='' type="text" class="form-control">
+			<input class='goal_input_gram' id='' type="text" class="form-control" value='<%= (user.fatPercent * user.calories) / 100 %>'>
+			<input class='goal_input_percent' id='' type="text" class="form-control" value='<%= user.fatPercent %>%'>
 			<br>
 
 			<label class='goal_form_label'for="">Protein</label>
-			<input class='goal_input_gram' id='' type="text" class="form-control">
-			<input class='goal_input_percent' id='' type="text" class="form-control">
+			<input class='goal_input_gram' id='' type="text" class="form-control" value='<%= (user.proteinPercent * user.calories) / 100 %>'>
+			<input class='goal_input_percent' id='' type="text" class="form-control" value='<%= user.proteinPercent %>%'>
 		</div>
-	
-		<button type="submit" class="btn btn-primary">Change your goal</button>
+
 	</form>
 
+	<a id='modal_trigger' href='#modal' class="btn btn-primary">Change your goal</a>
 
+	<div id='modal' class='popupContainer' style='display:none;'>
+		<section class='popupHeader'>
+			<span class='header_title'>Change your daily goal</span>
+			<span class='modal_close'><i class='fa fa-times'></i></span>
+		</section>
+
+		<section class='popupBody'>
+
+			<div class='user_register'>
+
+				<form method='POST' action='/goal/changeGoal'>
+
+					<label>Calories</label>
+					<input name='calories' type='text' placeholder='i.e. 1500'>
+					</br>
+
+					<label>Carbohydrates percent</label>
+					<input name='carbPercent' type='text' placeholder='i.e. 5'>
+					</br>
+
+					<label>Fat percent</label>
+					<input name='fatPercent' type='text' placeholder='i.e. 75'>
+					</br>
+
+					<label>Protein percent</label>
+					<input name='proteinPercent' type='text' placeholder='i.e. 20'>
+					</br>
+
+					<div class='action_btns'>
+						<div>
+							<input type='submit' class="btn btn_red">
+						</div>	
+					</div>
+				</form>
+			</div>
+		</section>
+	</div>
 
 </main>
+
+<script type="text/javascript">
+
+	$(function(){
+		$("#modal_trigger").leanModal( {
+			top : 100, 
+			overlay : 0.6, 
+			closeButton: ".modal_close" 
+		});
+		$(".user_register").show();
+	})
+
+</script>
+
+
+
+
+
 

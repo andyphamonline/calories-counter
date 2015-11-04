@@ -8,25 +8,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      caloriesGram: {
+      carb: {
         type: Sequelize.INTEGER
       },
-      carbPercent: {
+      fat: {
         type: Sequelize.INTEGER
       },
-      fatPercent: {
-        type: Sequelize.INTEGER
-      },
-      proteinPercent: {
-        type: Sequelize.INTEGER
-      },
-      carbGram: {
-        type: Sequelize.INTEGER
-      },
-      fatGram: {
-        type: Sequelize.INTEGER
-      },
-      proteinGram: {
+      protein: {
         type: Sequelize.INTEGER
       },
       createdAt: {
