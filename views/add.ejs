@@ -16,18 +16,48 @@
 
 <main>
 
-	<form action="" method="GET" role="form">
+	<form method="POST" role="form">
 	
 		<div class="form-group">
-			<input type="text" class="form-control" id="" placeholder="i.e. cheese">
+			<input type="text" class="searchBar form-control" name='search' placeholder="i.e. cheese">
 		</div>
 	
 		<button type="submit" class="btn btn-primary">Search</button>
 	</form>
 
-	<div class="well">
-		
+	
+	<div class="row">
+		<form action="/" method="POST" role="form">
+			<div class="foodResult col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<% if (data) { %>
+				<% data.list.item.forEach(function(food) { %>
+					<a href="<%= food.name %> "><%= food.name %></a>
+					<br>
+				<% }); %>
+				<% } %>
+			</div>
+
+		</form>
+
+
+		<div class="quantity col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<form>
+				<p>Quantity</p>
+				<input type='text' name='quanity' placeholder='i.e. 6'>
+				<p>gram</p>
+				<br>
+
+				<p>Carb</p>
+				<input type='text' name='carb'>
+				<p>Fat</p>
+				<input type='text' name='carb'>
+				<p>Protein</p>
+				<input type='text' name='carb'>
+			</form>
+		</div>
 	</div>
+
+	
 
 
 

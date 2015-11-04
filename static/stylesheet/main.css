@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Frijole);
 @import url(https://fonts.googleapis.com/css?family=Shojumaru);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab);
 
 * { 
 	margin: 0;
@@ -15,7 +16,7 @@
 	clear: both;
 }
 
-.container {
+.wrapper {
 	background-color: #606060;
 	font-size: 12px;
 	height: 100vh;
@@ -26,23 +27,33 @@
 
 /*common*/
 h2 {
-	color: #45E4FF;
+	color: #FFF65A;
 	font-family: 'Shojumaru', cursive;
 	font-size: 2em;
 	font-weight: 400;
 }
 
-nav {
-	border: 2px green solid;
+p {
+	font-family: 'Josefin Slab', serif;
+	font-size: 1.5em;
 }
 
 /*index*/
+header {
+	position: relative;
+}
+
 header a {
 	display: inline-block;
 }
 
 header img {
+	border-radius: 24%;
 	display: inline-block;
+	position: absolute;
+	left: 3.5em;
+	top: 1em;
+	width: 6%;
 }
 
 header h1 {
@@ -50,24 +61,20 @@ header h1 {
 	display: inline-block;
 	font-family: 'Frijole', cursive;
 	font-size: 5em;
+	margin-bottom: -1em;
+	margin-top: 0.25em;
 }
 
-.about, .login {
-	border: 2px green solid;
-	float: left;
-	margin: 0.5%;
-	width: 48%;
-}
 
+*/
 .about img {
-	border: 2px red solid;
-	width: 30%;
+	border-radius: 30%;
+	margin-bottom: 1.2em;
 }
 
 .about p {
-	border: 2px yellow solid;
 	display: inline-block;
-	width: 40%;
+	color: #45E4FF;
 }
 
 .login input {
@@ -114,6 +121,19 @@ th, td {
 
 
 /*add*/
+.foodResult, .quantity {
+	border: 2px green solid;
+	height: 20em;
+	overflow-y: scroll;
+}
+
+.quantity p {
+	display: inline-block;
+}
+
+.quantity input {
+	width: 3em;
+}
 
 
 

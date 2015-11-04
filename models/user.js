@@ -12,9 +12,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        models.user.hasMany(models.provider);
         models.user.belongsToMany(models.nutrient, {through: 'usersnutrients'});
-        models.user.belongsToMany(models.food, {through: 'usersfoods'});
       },
       authenticate: function(email, password, callback) {
         this.find({where: {email:email}}).then(function(user) {

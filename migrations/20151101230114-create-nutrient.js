@@ -8,6 +8,12 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      foodName: {
+        type: Sequelize.TEXT
+      },
+      quantity: {
+        type: Sequelize.INTEGER
+      },
       carb: {
         type: Sequelize.INTEGER
       },

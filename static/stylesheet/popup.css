@@ -11,6 +11,13 @@
     display: none;
 }
 
+#modal_trigger {
+	right: 2em;
+	top: 1.8em;
+	
+	position: absolute;
+}
+
 .popupContainer{
 	position:absolute;
 	width:330px;
