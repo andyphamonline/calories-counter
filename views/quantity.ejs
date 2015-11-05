@@ -1,0 +1,59 @@
+<div class="quantity">
+	<form action='' method='' role='form'>
+
+		<span>Food name:</span>
+		<%= data.report.foods[0].name %>
+		<br>
+
+		<span>Carb:</span>
+		<%= data.report.foods[0].nutrients[2].value %>
+		<br>
+
+		<span>Fat:</span>
+		<%= data.report.foods[0].nutrients[1].value %>
+		<br>
+
+		<span>Protein:</span>
+		<%= data.report.foods[0].nutrients[0].value %>
+
+		<p>Quantity</p>
+		<input id='quantity' type='text' name='quantity' value='1'>
+		<p>gram</p>
+		<br>
+
+		<p>Carb</p>
+		<input id='carb' type='text' name='carb' value='<%=  data.report.foods[0].nutrients[2].value%>'>
+		<p>Fat</p>
+		<input id='fat' type='text' name='fat' value='<%=  data.report.foods[0].nutrients[1].value%>'>
+		<p>Protein</p>
+		<input id='protein' type='text' name='protein' value='<%= data.report.foods[0].nutrients[0].value %>'>
+
+		<button type="submit" class="btn btn-primary">Add food</button>
+	</form>
+</div>
+
+<script>
+
+$(function() {
+	
+	$('.quantity').change(function() {		
+		var quantityValue = parseFloat($('#quantity').val()).toFixed(2);
+		var carbValue = parseFloat($('#carb').val()).toFixed(2);
+		var fatValue = parseFloat($('#fat').val()).toFixed(2);
+		var proteinValue = parseFloat($('#protein').val());
+		carbValue = carbValue * quantityValue;
+		fatValue = fatValue * quantityValue;
+		proteinValue = proteinValue * quantityValue;
+
+		var newCarbValue = parseFloat(carbValue).toFixed(2);
+		var newFatValue = parseFloat(fatValue).toFixed(2);
+		var newProteinValue = parseFloat(proteinValue).toFixed(2);
+				
+		$('#carb').attr('value', newCarbValue);
+		$('#fat').attr('value', newFatValue);
+		$('#protein').attr('value', newProteinValue);
+		
+	});
+});
+
+</script>

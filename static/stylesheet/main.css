@@ -121,10 +121,13 @@ th, td {
 
 
 /*add*/
-.foodResult, .quantity {
-	border: 2px green solid;
-	height: 20em;
+.foodResult {
 	overflow-y: scroll;
+}
+
+/* for some reason doesn't work right now*/
+.quantity {
+	border: 2px solid green;
 }
 
 .quantity p {

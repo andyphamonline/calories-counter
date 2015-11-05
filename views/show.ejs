@@ -1,0 +1,20 @@
+
+	<div class="row">
+		
+			<div class="foodResult">
+				
+				<% data.list.item.forEach(function(food) { %>
+					<a href="<%= '/quantity/' + food.ndbno %> ">
+						<br>
+						<%= food.name %>
+						<br>
+						<b><%= food.ndbno %></b>
+					</a>
+					<br>
+				<% }); %>
+				
+			</div>
+
+	</div>
+
+	

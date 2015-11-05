@@ -3,7 +3,7 @@ var app = express();
 var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var server = require('http').createServer(app);
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8000;
 
 var session = require('express-session');
 var db = require('./models');
@@ -92,8 +92,11 @@ app.use('/goal', require('./controllers/goal'));
 
 app.use('/diary', require('./controllers/diary'));
 
-app.use('/add', require('./controllers/add'));
+app.use('/search', require('./controllers/search'));
 
+app.use('/show', require('./controllers/show'));
+
+app.use('/quantity', require('./controllers/quantity'));
 
 
 server.listen(port);
