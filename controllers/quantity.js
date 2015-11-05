@@ -17,6 +17,7 @@ router.get('/:id', function(req, res) {
 	)
 });
 
+//input data into nutrient table & log table when click on add food
 router.post('/:id', function( req, res) {
 	db.nutrient.create( {
 		ndbno: req.body.ndbno,
@@ -26,27 +27,15 @@ router.post('/:id', function( req, res) {
 		fat: req.body.fat,
 		protein: req.body.protein
 	}).then(function(nutrient) {
-		res.redirect('/diary');
+		db.log.create( {
+			userId: req.session.user,
+			date: req.session.currentDate,
+			nutrientId: nutrient.id
+		}).then(function(log) {
+			res.redirect('/diary');
+		})
 	})
-});
+})
 
-
-// router.post('/:id', function(req, res) {
-// 	db.nutrient.findOrCreate( {
-// 		where: {
-// 			ndbno: req.body.ndbno,
-// 			foodName: req.body.foodName,
-// 			quantity: req.body.quantity,
-// 			carb: req.body.carb,
-// 			fat: req.body.fat,
-// 			protein: req.body.protein
-// 		}	
-// 	}).spread(function(nutrient, created) {
-// 		nutrient.save().then(function(nutrient) {
-// 			res.redirect('/diary');	
-// 		})
-		
-// 	})
-// });
 
 module.exports = router;

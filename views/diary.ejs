@@ -8,9 +8,9 @@
 
 <main>
 
-	<form method='POST' role='form'>
-		<p>Date: <input type="text" id="datepicker"></p>
-		<button type='submit'>
+	<form action='/search' method='POST' role='form'>
+		<p>Date: <input name='date' type="text" id="datepicker"></p>
+		<button type='submit'>Add food</button>
 	</form>
 
 	<table>
@@ -54,8 +54,6 @@
 		</tr>
 
 	</table>
-
-	<a href='/search' class='btn btn-primary'>Add food</a>
 
 
 </main>

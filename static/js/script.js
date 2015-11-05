@@ -7,7 +7,20 @@ $(function(){
 		$('#test2').trigger('submit');
 	});
 
-	$( "#datepicker" ).datepicker().datepicker('setDate', new Date());
+	//set today date when clicked on page
+	// $( "#datepicker" ).datepicker().datepicker('setDate', new Date());
 	// var currentDate = $( "#datepicker" ).datepicker( "getDate" );
+
+	$('#datepicker').datepicker({
+        showOtherMonths: true,
+        appendText:"(i.e. mm-dd-yy)",
+        dateFormat: "mm-dd-yy",
+        onSelect: function (dateText, inst) {
+            console.log('dateText ' + dateText);
+        }
+    });
 	
+	
+
+
 })

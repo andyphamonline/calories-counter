@@ -7,7 +7,11 @@ router.get('/', function(req, res) {
 	res.render('search');
 });
 
-
+router.post('/', function(req, res) {
+	req.session.currentDate = req.body.date;
+	console.log(req.session.currentDate);
+	res.render('search');
+});
 
 
 
