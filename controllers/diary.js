@@ -4,13 +4,11 @@ var db = require('../models')
 var goal = {};
 
 router.get('/', function(req, res) {
-	var date = req.query.date;	
 	res.render('diary', {goal: goal});
-	console.log(date);
 });
 
 router.post('/', function(req, res) {
-
+	
 	goal = {
 		calories: req.body.calories,
 		carb: req.body.carb,
