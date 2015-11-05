@@ -8,6 +8,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      ndbno: {
+        type: Sequelize.TEXT
+      },
       foodName: {
         type: Sequelize.TEXT
       },
@@ -15,13 +18,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       carb: {
-        type: Sequelize.INTEGER
+        type: Sequelize.TEXT
       },
       fat: {
-        type: Sequelize.INTEGER
+        type: Sequelize.TEXT
       },
       protein: {
-        type: Sequelize.INTEGER
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,

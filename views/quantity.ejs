@@ -1,8 +1,12 @@
 <div class="quantity">
-	<form action='' method='' role='form'>
+	<form action='/quantity/<%= data.report.foods[0].ndbno %>' method='POST' role='form'>
 
 		<span>Food name:</span>
-		<%= data.report.foods[0].name %>
+		<input type='hidden' name='foodName' value='<%= data.report.foods[0].name %>'>
+		<br>
+
+		<span>ndbno:</span>
+		<input type='hidden' name='ndbno' value='<%= data.report.foods[0].ndbno %>'>
 		<br>
 
 		<span>Carb:</span>
@@ -36,7 +40,7 @@
 
 $(function() {
 	
-	$('.quantity').change(function() {		
+	$('#quantity').change(function() {		
 		var quantityValue = parseFloat($('#quantity').val()).toFixed(2);
 		var carbValue = parseFloat($('#carb').val()).toFixed(2);
 		var fatValue = parseFloat($('#fat').val()).toFixed(2);

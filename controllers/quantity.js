@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request');
+var db = require('../models');
 
 
 router.get('/:id', function(req, res) {
@@ -16,9 +17,22 @@ router.get('/:id', function(req, res) {
 	)
 });
 
-
-
-
-
+router.post('/:id', function(req, res) {
+	db.nutrient.findOrCreate( {
+		where: {
+			ndbno: req.body.ndbno,
+			foodName: req.body.foodName,
+			quantity: req.body.quantity,
+			carb: req.body.carb,
+			fat: req.body.fat,
+			protein: req.body.protein
+		}	
+	}).spread(function(nutrient, created) {
+		nutrient.save().then(function(nutrient) {
+			res.redirect('/diary');	
+		})
+		
+	})
+});
 
 module.exports = router;
