@@ -2,8 +2,8 @@ var express = require('express');
 var app = express();
 var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
-var server = require('http').createServer(app);
-var port = process.env.PORT || 8000;
+// var server = require('http').createServer(app);
+var port = process.env.PORT || 3000;
 
 var session = require('express-session');
 var db = require('./models');
@@ -99,4 +99,4 @@ app.use('/show', require('./controllers/show'));
 app.use('/quantity', require('./controllers/quantity'));
 
 
-server.listen(port);
+app.listen(port);
