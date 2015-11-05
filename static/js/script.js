@@ -7,6 +7,7 @@ $(function(){
 		$('#test2').trigger('submit');
 	});
 
-	$( "#datepicker" ).datepicker();
+	$( "#datepicker" ).datepicker().datepicker('setDate', new Date());
+	// var currentDate = $( "#datepicker" ).datepicker( "getDate" );
 	
 })

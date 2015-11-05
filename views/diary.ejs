@@ -16,7 +16,9 @@
 
 <main>
 
-<p>Date: <input type="text" id="datepicker"></p>
+	<form method='POST' role='form'>
+		<p>Date: <input type="text" id="datepicker"></p>
+	</form>
 
 	<table>
 		<tr>
@@ -25,24 +27,21 @@
 			<th>Carbohydrate</th>
 			<th>Fat</th>
 			<th>Protein</th>
+			<th>Quantity</th>
 		</tr>
 	</table>
 
-	<tr>
-		<th>Total</th>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-	</tr>
+	<table class='newFood'>
+
+	</table>
 
 	<table>
 		<tr>
 			<th>Total</th>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
-			<td>0</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
 		</tr>
 
 		<tr>
@@ -55,10 +54,10 @@
 
 		<tr>
 			<th>Remaining</th>
-			<td><%= goal.calories %></td>
-			<td><%= goal.carb %></td>
-			<td><%= goal.fat %></td>
-			<td><%= goal.protein %></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
 		</tr>
 
 	</table>

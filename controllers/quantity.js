@@ -17,22 +17,36 @@ router.get('/:id', function(req, res) {
 	)
 });
 
-router.post('/:id', function(req, res) {
-	db.nutrient.findOrCreate( {
-		where: {
-			ndbno: req.body.ndbno,
-			foodName: req.body.foodName,
-			quantity: req.body.quantity,
-			carb: req.body.carb,
-			fat: req.body.fat,
-			protein: req.body.protein
-		}	
-	}).spread(function(nutrient, created) {
-		nutrient.save().then(function(nutrient) {
-			res.redirect('/diary');	
-		})
-		
+router.post('/:id', function( req, res) {
+	db.nutrient.create( {
+		ndbno: req.body.ndbno,
+		foodName: req.body.foodName,
+		quantity: req.body.quantity,
+		carb: req.body.carb,
+		fat: req.body.fat,
+		protein: req.body.protein
+	}).then(function(nutrient) {
+		res.redirect('/diary');
 	})
 });
+
+
+// router.post('/:id', function(req, res) {
+// 	db.nutrient.findOrCreate( {
+// 		where: {
+// 			ndbno: req.body.ndbno,
+// 			foodName: req.body.foodName,
+// 			quantity: req.body.quantity,
+// 			carb: req.body.carb,
+// 			fat: req.body.fat,
+// 			protein: req.body.protein
+// 		}	
+// 	}).spread(function(nutrient, created) {
+// 		nutrient.save().then(function(nutrient) {
+// 			res.redirect('/diary');	
+// 		})
+		
+// 	})
+// });
 
 module.exports = router;
