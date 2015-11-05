@@ -9,5 +9,26 @@ $(function(){
 
 	$( "#datepicker" ).datepicker().datepicker('setDate', new Date());
 	// var currentDate = $( "#datepicker" ).datepicker( "getDate" );
+	// var date = $("#datepicker").datepicker({ dateFormat: 'dd,MM,yyyy' }).val();
+	// console.log(date);
+
+
+
+	    $('#calendar').datepicker({
+	        showOtherMonths: true,
+	        appendText:"(yy-mm-dd)",
+	        dateFormat: "yy-mm-dd",
+	        onSelect: function (dateText, inst) {
+	            console.log(dateText);
+	        }
+	    });
+	
+
+
+
+
+	$('.date1').on('click', function() {
+		$('.date2').trigger('submit');
+	})
 	
 })
