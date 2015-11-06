@@ -24,10 +24,10 @@
 	<% logs.forEach(function(logs) { %>
 		<tr>
 			<th><%= logs.nutrient.dataValues.foodName %></th>
-			<td><%= logs.nutrient.dataValues.calories %></td>
-			<td><%= logs.nutrient.dataValues.carb %></td>
-			<td><%= logs.nutrient.dataValues.fat %></td>
-			<td><%= logs.nutrient.dataValues.protein %></td>
+			<td class='calories'><%= logs.nutrient.dataValues.calories %></td>
+			<td class='carb'><%= logs.nutrient.dataValues.carb %></td>
+			<td class='fat'><%= logs.nutrient.dataValues.fat %></td>
+			<td class='protein'><%= logs.nutrient.dataValues.protein %></td>
 			<td><%= logs.nutrient.dataValues.quantity %></td>
 		</tr>
 	<% }); %>
@@ -39,7 +39,7 @@
 	<table>
 		<tr>
 			<th>Total</th>
-			<td></td>
+			<td class='caloriesSum'></td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -66,9 +66,20 @@
 </main>
 
 <script>
-
+	//currently not working	
 	$(function() {
+		var caloriesSum = 0;
+		var carbSum = 0;
+		var fatSum = 0;
+		var proteinSum = 0;
+
+		$('.newFood .calories').each(function() {
+			caloriesSum += parseFloat($(this).text());
+		});
+
+		$('.caloriesSum').attr('value', caloriesSum);
 
 	});
 
 </script>
+

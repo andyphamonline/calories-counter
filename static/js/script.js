@@ -19,6 +19,8 @@ $(function(){
             console.log('dateText ' + dateText);
         }
     });
+
+    
 	
 	
 

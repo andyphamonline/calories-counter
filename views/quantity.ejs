@@ -40,8 +40,6 @@
 <script>
 
 $(function() {
-	
-
 
 	$('#quantity').change(function() {		
 		var quantityValue = parseFloat($('#quantity').val());
@@ -53,14 +51,8 @@ $(function() {
 		fatValue = fatValue * quantityValue;
 		proteinValue = proteinValue * quantityValue;
 
-		// var newCarbValue = parseFloat(carbValue).toFixed(2);
-		// var newFatValue = parseFloat(fatValue).toFixed(2);
-		// var newProteinValue = parseFloat(proteinValue).toFixed(2);
-		
 		var caloriesValue = carbValue + fatValue + proteinValue;
 		console.log(caloriesValue);
-		// var newCaloriesValue = parseFloat(calories).toFixed(2);
-		// console.log(newCaloriesValue);
 				
 		$('#carb').attr('value', carbValue);
 		$('#fat').attr('value', fatValue);
