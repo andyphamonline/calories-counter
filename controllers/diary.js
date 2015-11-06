@@ -23,7 +23,7 @@ router.get('/:date', function(req, res) {
 				alert('No log for this date');
 			}
 		});
-	});
+});
 
 // // working post
 // router.post('/', function(req, res) {
