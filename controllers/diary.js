@@ -19,10 +19,8 @@ router.get('/:date', function(req, res) {
 		}}).then(function(logs) {
 			if (logs.length) {
 				res.render('log', {logs: logs});
-				
-				console.log(logs[0].nutrient);
 			} else {
-				console.log("No logs found!");
+				alert('No log for this date');
 			}
 		});
 	});

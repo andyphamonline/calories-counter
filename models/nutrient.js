@@ -7,6 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     carb: DataTypes.TEXT,
     fat: DataTypes.TEXT,
     protein: DataTypes.TEXT,
+    calories: DataTypes.TEXT,
     logId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER
   }, {

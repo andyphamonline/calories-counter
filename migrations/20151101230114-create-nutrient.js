@@ -26,6 +26,9 @@ module.exports = {
       protein: {
         type: Sequelize.TEXT
       },
+      calories: {
+        type: Sequelize.TEXT
+      },
       logId: {
         type: Sequelize.INTEGER
       },
