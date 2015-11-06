@@ -8,15 +8,6 @@
 
 <main>
 
-	<form action='/search' method='POST' role='form'>
-		<p>Date: <input name='date' type="text" id="datepicker"></p>
-		<button type='submit'>Add food</button>
-	</form>
-	
-	<form action='/:date' method='GET' role='form'>
-		<button id="log_for_date">Go to log for this date</button>
-	</form>
-
 	<table>
 		<tr>
 			<th>Food name</th>
@@ -29,7 +20,20 @@
 	</table>
 
 	<table class='newFood'>
+		
+	<% logs.forEach(function(logs) { %>
+		<tr>
+			<th><%= logs.nutrient.dataValues.foodName %></th>
+			<td><%= logs.nutrient.dataValues.foodName %></td>
+			<td><%= logs.nutrient.dataValues.carb %></td>
+			<td><%= logs.nutrient.dataValues.fat %></td>
+			<td><%= logs.nutrient.dataValues.protein %></td>
+			<td><%= logs.nutrient.dataValues.quantity %></td>
+		</tr>
+	<% }); %>
 
+
+		
 	</table>
 
 	<table>
@@ -43,10 +47,10 @@
 
 		<tr>
 			<th>Goal</th>
-			<td><%= goal.calories %></td>
-			<td><%= goal.carb %></td>
-			<td><%= goal.fat %></td>
-			<td><%= goal.protein %></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
 		</tr>
 
 		<tr>
@@ -61,14 +65,3 @@
 
 
 </main>
-
-<script>
-$("body").on("click", "#log_for_date", function(e) {
-	e.preventDefault();
-
-	var date = $("#datepicker").val();
-	if (date) {
-		window.location = "/diary/" + date;
-	}
-});
-</script>

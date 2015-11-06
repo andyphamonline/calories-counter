@@ -45,13 +45,18 @@ $(function() {
 		var carbValue = parseFloat($('#carb').val()).toFixed(2);
 		var fatValue = parseFloat($('#fat').val()).toFixed(2);
 		var proteinValue = parseFloat($('#protein').val());
+		var calories;
 		carbValue = carbValue * quantityValue;
 		fatValue = fatValue * quantityValue;
 		proteinValue = proteinValue * quantityValue;
 
+
 		var newCarbValue = parseFloat(carbValue).toFixed(2);
 		var newFatValue = parseFloat(fatValue).toFixed(2);
 		var newProteinValue = parseFloat(proteinValue).toFixed(2);
+		
+
+
 				
 		$('#carb').attr('value', newCarbValue);
 		$('#fat').attr('value', newFatValue);
