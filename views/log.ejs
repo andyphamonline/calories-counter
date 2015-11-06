@@ -12,7 +12,7 @@
 
 	<table>
 		<tr>
-			<th>Food name</th>
+			<th class='long'>Food name</th>
 			<th>Calories</th>
 			<th>Carbohydrate</th>
 			<th>Fat</th>
@@ -25,7 +25,7 @@
 		
 	<% logs.forEach(function(logs) { %>
 		<tr>
-			<th><%= logs.nutrient.dataValues.foodName %></th>
+			<th class='long'><%= logs.nutrient.dataValues.foodName %></th>
 			<td class='calories'><%= logs.nutrient.dataValues.calories %></td>
 			<td class='carb'><%= logs.nutrient.dataValues.carb %></td>
 			<td class='fat'><%= logs.nutrient.dataValues.fat %></td>
@@ -38,30 +38,30 @@
 
 	<table>
 		<tr>
-			<th>Total</th>
+			<th class='long'>Total</th>
 			<td class='caloriesSum'></td>
 			<td class='carbSum'></td>
 			<td class='fatSum'></td>
 			<td class='proteinSum'></td>
-			<td></td>
+			<td>N/A</td>
 		</tr>
 
 		<tr>
-			<th>Goal</th>
-			<td><%= goal.calories %></td>
-			<td><%= goal.carbGram %></td>
-			<td><%= goal.fatGram %></td>
-			<td><%= goal.proteinGram %></td>
-			<td></td>
+			<th class='long'>Goal</th>
+			<td class='goalCalories'><%= goal.calories %></td>
+			<td class='goalCarb'><%= goal.carbGram %></td>
+			<td class='goalFat'><%= goal.fatGram %></td>
+			<td class='goalProtein'><%= goal.proteinGram %></td>
+			<td>N/A</td>
 		</tr>
 
 		<tr>
-			<th>Remaining</th>
+			<th class='long'>Remaining</th>
 			<td class='remainCalories'></td>
 			<td class='remainCarb'></td>
 			<td class='remainFat'></td>
 			<td class='remainProtein'></td>
-			<td></td>
+			<td>N/A</td>
 		</tr>
 
 	</table>
@@ -69,12 +69,15 @@
 </main>
 
 <script>
-	//currently not working	
 	$(function() {
 		var caloriesSum = 0;
 		var carbSum = 0;
 		var fatSum = 0;
 		var proteinSum = 0;
+		var remainCalories = 0;
+		var remainCarb = 0;
+		var remainFat = 0;
+		var remainProtein = 0;
 
 		$('.newFood .calories').each(function() {
 			caloriesSum += parseFloat($(this).text());
@@ -94,7 +97,14 @@
 		$('.fatSum').text(fatSum);
 		$('.proteinSum').text(proteinSum);
 
-
+		remainCalories = parseFloat($('.goalCalories').text()) - parseFloat($('.caloriesSum').text());
+		remainCarb = parseFloat($('.goalCarb').text()) - parseFloat($('.carbSum').text());
+		remainFat = parseFloat($('.goalFat').text()) - parseFloat($('.fatSum').text());
+		remainProtein = parseFloat($('.goalProtein').text()) - parseFloat($('.proteinSum').text());
+		$('.remainCalories').text(remainCalories);
+		$('.remainCarb').text(remainCarb);
+		$('.remainFat').text(remainFat);
+		$('.remainProtein').text(remainProtein);
 
 	});
 

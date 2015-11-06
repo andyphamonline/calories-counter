@@ -208,7 +208,7 @@ header h1 {
 	border-radius: 4em;
 	margin: 0 auto;
 	width: 70em;
-	height: 42em;
+	height: 30em;
 	overflow-y: scroll;
 }
 
@@ -257,7 +257,7 @@ header h1 {
 	border-radius: 4em;
 	padding: 1em;
 	margin: 0 auto;
-	width: 70em;
+	width: 80em;
 }
 
 table {
@@ -271,8 +271,14 @@ table, th, td {
 	text-align: center;
 }
 
-th, td {
+td, th {
+	color: #52B3C4;
+	font-size: 1.1em;
 	width: 8em;
+}
+
+.long {
+	width: 18em;
 }
 
 /*footer*/
