@@ -8,20 +8,12 @@
 
 <hr>
 <main class='mainShow'>
-
-	<div class="row">
-		
-			<div class="foodResult">
 				
-				<% data.list.item.forEach(function(food) { %>
-					<a href="<%= '/quantity/' + food.ndbno %> ">						
-						<%= food.name %>						
-					</a>
-					<br>
-				<% }); %>
-				
-			</div>
-
-	</div>
+	<% data.list.item.forEach(function(food) { %>
+		<a href="<%= '/quantity/' + food.ndbno %> ">						
+			<%= food.name %>						
+		</a>
+		<br>
+	<% }); %>
 
 </main>	
