@@ -20,17 +20,18 @@
 	</table>
 
 	<table class='newFood'>
-		
-	<% logs.forEach(function(logs) { %>
-		<tr>
-			<th><%= logs.nutrient.dataValues.foodName %></th>
-			<td><%= logs.nutrient.dataValues.calories %></td>
-			<td><%= logs.nutrient.dataValues.carb %></td>
-			<td><%= logs.nutrient.dataValues.fat %></td>
-			<td><%= logs.nutrient.dataValues.protein %></td>
-			<td><%= logs.nutrient.dataValues.quantity %></td>
-		</tr>
-	<% }); %>
+
+		<% logs.forEach(function(logs) { %>
+			<tr>
+				<th><%= logs.nutrient.dataValues.foodName %></th>
+				<td><%= logs.nutrient.dataValues.calories %></td>
+				<td><%= logs.nutrient.dataValues.carb %></td>
+				<td><%= logs.nutrient.dataValues.fat %></td>
+				<td><%= logs.nutrient.dataValues.protein %></td>
+				<td><%= logs.nutrient.dataValues.quantity %></td>
+			</tr>
+		<% }); %>
+	
 
 
 		
@@ -65,10 +66,3 @@
 
 </main>
 
-<script>
-
-	$(function() {
-
-	});
-
-</script>
