@@ -55,13 +55,18 @@ $(function() {
 		fatValue = fatValue * quantityValue;
 		proteinValue = proteinValue * quantityValue;
 
+		var newCarbValue = parseFloat(carbValue).toFixed(2);
+		var newFatValue = parseFloat(fatValue).toFixed(2);
+		var newProteinValue = parseFloat(proteinValue).toFixed(2);
+
 		var caloriesValue = carbValue + fatValue + proteinValue;
-		console.log(caloriesValue);
+		var newCaloriesValue = parseFloat(caloriesValue).toFixed(2);
+		
 				
-		$('#carb').attr('value', carbValue);
-		$('#fat').attr('value', fatValue);
-		$('#protein').attr('value', proteinValue);
-		$('#calories').attr('value', caloriesValue);
+		$('#carb').attr('value', newCarbValue);
+		$('#fat').attr('value', newFatValue);
+		$('#protein').attr('value', newProteinValue);
+		$('#calories').attr('value', newCaloriesValue);
 		
 	});
 });

@@ -92,19 +92,20 @@
 			proteinSum += parseFloat($(this).text());
 		});
 
-		$('.caloriesSum').text(caloriesSum);
-		$('.carbSum').text(carbSum);
-		$('.fatSum').text(fatSum);
-		$('.proteinSum').text(proteinSum);
+		$('.caloriesSum').text(Math.round(caloriesSum *100)/100);
+		$('.carbSum').text(Math.round(carbSum));
+		$('.fatSum').text(Math.round(fatSum));
+		$('.proteinSum').text(Math.round(proteinSum));
 
 		remainCalories = parseFloat($('.goalCalories').text()) - parseFloat($('.caloriesSum').text());
 		remainCarb = parseFloat($('.goalCarb').text()) - parseFloat($('.carbSum').text());
 		remainFat = parseFloat($('.goalFat').text()) - parseFloat($('.fatSum').text());
 		remainProtein = parseFloat($('.goalProtein').text()) - parseFloat($('.proteinSum').text());
-		$('.remainCalories').text(remainCalories);
-		$('.remainCarb').text(remainCarb);
-		$('.remainFat').text(remainFat);
-		$('.remainProtein').text(remainProtein);
+		
+		$('.remainCalories').text(Math.round(remainCalories));
+		$('.remainCarb').text(Math.round(remainCarb *100)/100);
+		$('.remainFat').text(Math.round(remainFat));
+		$('.remainProtein').text(Math.round(remainProtein));
 
 	});
 
