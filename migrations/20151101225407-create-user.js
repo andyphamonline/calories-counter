@@ -29,6 +29,15 @@ module.exports = {
       proteinPercent: {
         type: Sequelize.INTEGER
       },
+      carbGram: {
+        type: Sequelize.INTEGER
+      },
+      fatGram: {
+        type: Sequelize.INTEGER
+      },
+      proteinGram: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

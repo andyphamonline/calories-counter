@@ -8,7 +8,10 @@ module.exports = function(sequelize, DataTypes) {
     calories: DataTypes.INTEGER,
     carbPercent: DataTypes.INTEGER,
     fatPercent: DataTypes.INTEGER,
-    proteinPercent: DataTypes.INTEGER
+    proteinPercent: DataTypes.INTEGER,
+    carbGram: DataTypes.INTEGER,
+    fatGram: DataTypes.INTEGER,
+    proteinGram: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {

@@ -25,7 +25,20 @@ router.get('/:date', function(req, res) {
 		});
 	});
 
-//working post
+// // working post
+// router.post('/', function(req, res) {
+
+// 	goal = {
+// 		calories: req.body.calories,
+// 		carb: req.body.carb,
+// 		fat: req.body.fat,
+// 		protein: req.body.protein
+// 	}
+// 	res.redirect('/diary');
+// });
+
+
+//posting to database working
 router.post('/', function(req, res) {
 
 	goal = {
@@ -34,7 +47,17 @@ router.post('/', function(req, res) {
 		fat: req.body.fat,
 		protein: req.body.protein
 	}
-	res.redirect('/diary');
+
+	db.user.find( {where: {id : req.session.user} }).then(function(user) {
+			user.updateAttributes( {
+				carbGram: req.body.carb,
+				fatGram: req.body.fat,
+				proteinGram: req.body.protein	
+				
+			}).then(function() {
+				res.redirect('/diary')
+			})		
+		})
 });
 
 module.exports = router;

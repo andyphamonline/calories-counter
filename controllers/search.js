@@ -13,6 +13,4 @@ router.post('/', function(req, res) {
 	res.render('search');
 });
 
-
-
 module.exports = router;
