@@ -12,7 +12,10 @@
 
 	<div class="quantity">
 		<form action='/quantity/<%= data.report.foods[0].ndbno %>' method='POST' role='form'>
-
+			
+			<input type='hidden' name='foodName' value='<%= data.report.foods[0].name %>'>
+			<input type='hidden' name='ndbno' value='<%= data.report.foods[0].ndbno %>'>
+			
 			<p>Quantity</p>
 			<input id='quantity' type='text' name='quantity' value=''>
 			<span>gram</span>

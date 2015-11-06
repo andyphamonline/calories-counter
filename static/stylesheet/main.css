@@ -98,8 +98,8 @@ header h1 {
 .about, .login {
 	background-color: rgba(255, 255, 255, .05);
 	border-radius: 4em;
-	margin-left: 7em;
-	padding: 2em;
+	margin-left: 9em;
+	/*margin: auto;*/
 }
 
 .about img {
@@ -109,6 +109,10 @@ header h1 {
 
 .about p {
 	display: inline-block;
+}
+
+.login {
+	padding: 2em;
 }
 
 .login input {
