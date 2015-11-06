@@ -25,7 +25,16 @@
 	text-align: center;
 }
 
+body {
+
+}
+
 /*common*/
+input {
+	margin: auto;
+	text-align: center;
+}
+
 h2 {
 	color: #FFF65A;
 	font-family: 'Shojumaru', cursive;
@@ -33,7 +42,18 @@ h2 {
 	font-weight: 400;
 }
 
-p {
+nav {
+	background-color: rgba(255, 255, 255, .05);
+	padding: .5em;
+}
+
+nav a {
+	margin-left: 4em;
+	margin-right: 4em;
+}
+
+p, label {
+	color: #45E4FF;
 	font-family: 'Josefin Slab', serif;
 	font-size: 1.5em;
 }
@@ -53,7 +73,7 @@ header img {
 	position: absolute;
 	left: 3.5em;
 	top: 1em;
-	width: 5%;
+	width: 5.8em;
 }
 
 header h1 {
@@ -65,14 +85,23 @@ header h1 {
 	margin-top: 0.25em;
 }
 
-#modal_trigger {
+.mainIndex {
+	padding: 1em;
+}
+
+.signup {
 	position: absolute;
 	right: 3.5em;
 	top: 2em;
 }
 
+.about, .login {
+	background-color: rgba(255, 255, 255, .05);
+	border-radius: 4em;
+	margin-left: 7em;
+	padding: 2em;
+}
 
-*/
 .about img {
 	border-radius: 30%;
 	margin-bottom: 1.2em;
@@ -80,22 +109,25 @@ header h1 {
 
 .about p {
 	display: inline-block;
-	color: #45E4FF;
 }
 
 .login input {
+	/*margin: auto;*/
 	width: 16em;
 }
 
-#forgot {
-	display: inline-block;
+.login input[name=email] {
+	margin-bottom: .5em;
 }
-
 
 /*goal*/
 
+.changeGoal {
+	margin-top: -.4em;
+}
+
 .goal_form_label {
-	display: inline-block;
+	display: block;
 }
 
 .goal_input_gram, .goal_input_percent {
@@ -104,6 +136,10 @@ header h1 {
 
 .goal_header_p {
 	display: inline-block;
+	position: absolute;
+	right: 2.4em;
+	font-size: 2em;
+	top: 1.4em;
 }
 
 .goal_header_h {
@@ -111,10 +147,120 @@ header h1 {
 }
 
 .goal_header_span {
-	color: blue;
+	color: #E8471F;
+}
+
+.mainGoal {
+	background-color: rgba(255, 255, 255, .05);
+	border-radius: 4em;
+	margin: auto;
+	padding: 1em;
+	width: 35em;
+}
+
+#test2 input {
+	margin-bottom: 1.5em;
+}
+
+#test2 button[type=submit] {
+	display: inline-block;
+	margin-bottom: .5em;
 }
 
 /*diary*/
+.mainDiary {
+	background-color: rgba(255, 255, 255, .05);
+	border-radius: 4em;
+	/*margin-top: 2em;*/
+	margin: auto;
+	padding: 1em;
+	width: 50em;
+}
+
+.mainDiary button[type=submit] {
+	margin: .5em;
+}
+
+#log_for_date {
+	margin: -.4em;
+}
+
+/*search*/
+.mainSearch {
+	background-color: rgba(255, 255, 255, .05);
+	border-radius: 4em;
+	margin: 2.5em auto;
+	padding: 3em;
+	width: 50em;
+}
+
+.mainSearch input {
+	width: 30em;
+}
+
+/*search*/
+.mainShow {
+	background-color: rgba(255, 255, 255, .05);
+	border-radius: 4em;
+	margin: 0 auto;
+	width: 70em;
+}
+
+/*show*/
+.mainShow a {
+	color: #45E4FF;
+	font-size: 1.3em;
+
+}
+
+.mainShow a:hover {
+	color: #E8471F;
+}
+
+.foodResult {
+	height: 100vh;
+	overflow-y: scroll;
+}
+
+/*quantity*/
+.mainQuantity {
+	background-color: rgba(255, 255, 255, .05);
+	border-radius: 4em;
+	padding: 1em;
+	margin: 0 auto;
+	width: 60em;
+}
+
+.mainQuantity p {
+	display: inline-block;
+}
+
+.mainQuantity input {
+	margin: 0 2em 1.5em .2em;
+}
+
+.mainQuantity span {
+	color: #45E4FF;
+	font-family: 'Josefin Slab', serif;
+	font-size: 1.2em;
+	margin: -1.6em;
+
+}
+
+/*log*/
+.mainLog {
+	background-color: rgba(255, 255, 255, .05);
+	border-radius: 4em;
+	padding: 1em;
+	margin: 0 auto;
+	width: 70em;
+}
+
+table {
+	margin: 0 auto;
+}
+
+
 table, th, td {
 	border: 1px black solid ;
 	border-collapse: collapse;
@@ -124,61 +270,3 @@ table, th, td {
 th, td {
 	width: 8em;
 }
-
-
-/*add*/
-.foodResult {
-	overflow-y: scroll;
-}
-
-/* for some reason doesn't work right now*/
-.quantity {
-	border: 2px solid green;
-}
-
-.quantity p {
-	display: inline-block;
-}
-
-.quantity input {
-	width: 3em;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

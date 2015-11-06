@@ -6,7 +6,9 @@
 
 </header>
 
-<main>
+<hr>
+
+<main class='mainGoal'>
 		
 	<form id='test2' action="/diary" method="POST" role="form">
 
@@ -26,18 +28,20 @@
 			<input class='goal_input_percent' type="text" class="form-control" value='<%= user.fatPercent %>%'>
 			<br>
 
-			<label class='goal_form_label'for="">Protein</label>
+			<label class='goal_form_label' for="">Protein</label>
 			<input name='protein' class='goal_input_gram' type="text" class="form-control" value='<%= (user.proteinPercent * user.calories) / 100 %>'>
 			<input class='goal_input_percent' type="text" class="form-control" value='<%= user.proteinPercent %>%'>
 
 			<br>
 
 			<button type='submit' class="btn btn-primary">Calendar</button>
+
+			<p>or</p>
 		</div>
 
 	</form>
 
-	<a id='modal_trigger' href='#modal' class="btn btn-primary">Change your goal</a>
+	<a id='modal_trigger' href='#modal' class="changeGoal btn btn-primary">Change your goal</a>
 
 	<div id='modal' class='popupContainer' style='display:none;'>
 		<section class='popupHeader'>

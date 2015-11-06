@@ -6,13 +6,17 @@
 
 </header>
 
-<main>
+<hr>
+
+<main class='mainDiary'>
 
 	<form action='/search' method='POST' role='form'>
 		<p>Date: <input name='date' type="text" id="datepicker"></p>
 		<button type='submit' class='btn btn-primary'>Food search</button>
 	</form>
-	
+
+	<p>or</p>
+
 	<form action='/:date' method='GET' role='form'>
 		<button id="log_for_date" class='btn btn-primary'>Daily log</button>
 	</form>

@@ -6,33 +6,16 @@
 
 </header>
 
-<main>
+<hr>
+
+<main class='mainQuantity'>
 
 	<div class="quantity">
 		<form action='/quantity/<%= data.report.foods[0].ndbno %>' method='POST' role='form'>
 
-			<span>Food name:</span>
-			<input type='hidden' name='foodName' value='<%= data.report.foods[0].name %>'>
-			<br>
-
-			<span>ndbno:</span>
-			<input type='hidden' name='ndbno' value='<%= data.report.foods[0].ndbno %>'>
-			<br>
-
-			<span>Carb:</span>
-			<%= data.report.foods[0].nutrients[2].value %>
-			<br>
-
-			<span>Fat:</span>
-			<%= data.report.foods[0].nutrients[1].value %>
-			<br>
-
-			<span>Protein:</span>
-			<%= data.report.foods[0].nutrients[0].value %>
-
 			<p>Quantity</p>
 			<input id='quantity' type='text' name='quantity' value=''>
-			<p>gram</p>
+			<span>gram</span>
 			<br>
 
 			<p>Carb</p>
@@ -42,8 +25,12 @@
 			<p>Protein</p>
 			<input id='protein' type='text' name='protein' value='<%= data.report.foods[0].nutrients[0].value %>'>
 
+			<br>
+
 			<p>Calories</p>
 			<input id='calories' type='text' name='calories' value=''>
+
+			<br>
 
 			<button type="submit" class="btn btn-primary">Add food</button>
 		</form>
