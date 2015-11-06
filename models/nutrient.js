@@ -6,12 +6,15 @@ module.exports = function(sequelize, DataTypes) {
     quantity: DataTypes.INTEGER,
     carb: DataTypes.TEXT,
     fat: DataTypes.TEXT,
-    protein: DataTypes.TEXT
+    protein: DataTypes.TEXT,
+    logId: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
         models.nutrient.belongsTo(models.user);
+        models.nutrient.hasOne(models.log)
       }
     }
   });

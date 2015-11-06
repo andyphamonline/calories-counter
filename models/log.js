@@ -9,6 +9,7 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         // associations can be defined here
         models.log.belongsTo(models.user);
+        models.log.hasOne(models.nutrient);
       }
     }
   });
