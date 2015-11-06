@@ -9,30 +9,30 @@
 <main>
 		
 	<form id='test2' action="/diary" method="POST" role="form">
-		<legend>Daily Goals</legend>
 
 		<div class="form-group">
 			<label class='goal_form_label' for="">Calories</label>
-			<input name='calories' class='goal_input_gram' id='' type="text" class="form-control" value='<%= user.calories %>'>
+			<input name='calories' class='goal_input_gram' type="text" class="form-control" value='<%= user.calories %>'>
+			<input class='goal_input_gram' type="text" class="form-control" value='100%'>
 			<br>
 
 			<label class='goal_form_label' for="">Carbohydrate</label>
-			<input name='carb' class='goal_input_gram' id='' type="text" class="form-control" value='<%= (user.carbPercent * user.calories) / 100 %>'>
-			<input class='goal_input_percent' id='' type="text" class="form-control" value='<%= user.carbPercent %>%'>
+			<input name='carb' class='goal_input_gram' type="text" class="form-control" value='<%= (user.carbPercent * user.calories) / 100 %>'>
+			<input class='goal_input_percent' type="text" class="form-control" value='<%= user.carbPercent %>%'>
 			<br>
 
 			<label class='goal_form_label' for="">Fat</label>
-			<input name='fat' class='goal_input_gram' id='' type="text" class="form-control" value='<%= (user.fatPercent * user.calories) / 100 %>'>
-			<input class='goal_input_percent' id='' type="text" class="form-control" value='<%= user.fatPercent %>%'>
+			<input name='fat' class='goal_input_gram' type="text" class="form-control" value='<%= (user.fatPercent * user.calories) / 100 %>'>
+			<input class='goal_input_percent' type="text" class="form-control" value='<%= user.fatPercent %>%'>
 			<br>
 
 			<label class='goal_form_label'for="">Protein</label>
-			<input name='protein' class='goal_input_gram' id='' type="text" class="form-control" value='<%= (user.proteinPercent * user.calories) / 100 %>'>
-			<input class='goal_input_percent' id='' type="text" class="form-control" value='<%= user.proteinPercent %>%'>
+			<input name='protein' class='goal_input_gram' type="text" class="form-control" value='<%= (user.proteinPercent * user.calories) / 100 %>'>
+			<input class='goal_input_percent' type="text" class="form-control" value='<%= user.proteinPercent %>%'>
 
 			<br>
 
-			<button type='submit' class="btn btn-primary">Diary</button>
+			<button type='submit' class="btn btn-primary">Calendar</button>
 		</div>
 
 	</form>

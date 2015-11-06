@@ -53,7 +53,7 @@ header img {
 	position: absolute;
 	left: 3.5em;
 	top: 1em;
-	width: 6%;
+	width: 5%;
 }
 
 header h1 {
@@ -63,6 +63,12 @@ header h1 {
 	font-size: 5em;
 	margin-bottom: -1em;
 	margin-top: 0.25em;
+}
+
+#modal_trigger {
+	position: absolute;
+	right: 3.5em;
+	top: 2em;
 }
 
 

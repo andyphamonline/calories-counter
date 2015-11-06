@@ -1,7 +1,7 @@
 <header>
 
 	<img class='goal_header_img' src='/images/logo_50.jpg' alt='Bacon logo' title='Eat more bacon'>
-	<h1 class='goal_header_h'>Diary</h1>
+	<h1 class='goal_header_h'>Calendar</h1>
 	<p class='goal_header_p'>Hi, <span class='goal_header_span'><%= currentUser.name %></span></p>
 
 </header>
@@ -10,11 +10,11 @@
 
 	<form action='/search' method='POST' role='form'>
 		<p>Date: <input name='date' type="text" id="datepicker"></p>
-		<button type='submit'>Add food</button>
+		<button type='submit' class='btn btn-primary'>Food search</button>
 	</form>
 	
 	<form action='/:date' method='GET' role='form'>
-		<button id="log_for_date">Go to log for this date</button>
+		<button id="log_for_date" class='btn btn-primary'>Daily log</button>
 	</form>
 
 	<table>

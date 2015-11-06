@@ -1,41 +1,55 @@
-<div class="quantity">
-	<form action='/quantity/<%= data.report.foods[0].ndbno %>' method='POST' role='form'>
+<header>
 
-		<span>Food name:</span>
-		<input type='hidden' name='foodName' value='<%= data.report.foods[0].name %>'>
-		<br>
+	<img class='goal_header_img' src='/images/logo_50.jpg' alt='Bacon logo' title='Eat more bacon'>
+	<h1 class='goal_header_h'>Nutrients</h1>
+	<p class='goal_header_p'>Hi, <span class='goal_header_span'><%= currentUser.name %></span></p>
 
-		<span>ndbno:</span>
-		<input type='hidden' name='ndbno' value='<%= data.report.foods[0].ndbno %>'>
-		<br>
+</header>
 
-		<span>Carb:</span>
-		<%= data.report.foods[0].nutrients[2].value %>
-		<br>
+<main>
 
-		<span>Fat:</span>
-		<%= data.report.foods[0].nutrients[1].value %>
-		<br>
+	<div class="quantity">
+		<form action='/quantity/<%= data.report.foods[0].ndbno %>' method='POST' role='form'>
 
-		<span>Protein:</span>
-		<%= data.report.foods[0].nutrients[0].value %>
+			<span>Food name:</span>
+			<input type='hidden' name='foodName' value='<%= data.report.foods[0].name %>'>
+			<br>
 
-		<p>Quantity</p>
-		<input id='quantity' type='text' name='quantity' value=''>
-		<p>gram</p>
-		<br>
+			<span>ndbno:</span>
+			<input type='hidden' name='ndbno' value='<%= data.report.foods[0].ndbno %>'>
+			<br>
 
-		<p>Carb</p>
-		<input id='carb' type='text' name='carb' value='<%=  data.report.foods[0].nutrients[2].value%>'>
-		<p>Fat</p>
-		<input id='fat' type='text' name='fat' value='<%=  data.report.foods[0].nutrients[1].value%>'>
-		<p>Protein</p>
-		<input id='protein' type='text' name='protein' value='<%= data.report.foods[0].nutrients[0].value %>'>
-		<input id='calories' type='text' name='calories' value=''>
+			<span>Carb:</span>
+			<%= data.report.foods[0].nutrients[2].value %>
+			<br>
 
-		<button type="submit" class="btn btn-primary">Add food</button>
-	</form>
-</div>
+			<span>Fat:</span>
+			<%= data.report.foods[0].nutrients[1].value %>
+			<br>
+
+			<span>Protein:</span>
+			<%= data.report.foods[0].nutrients[0].value %>
+
+			<p>Quantity</p>
+			<input id='quantity' type='text' name='quantity' value=''>
+			<p>gram</p>
+			<br>
+
+			<p>Carb</p>
+			<input id='carb' type='text' name='carb' value='<%=  data.report.foods[0].nutrients[2].value%>'>
+			<p>Fat</p>
+			<input id='fat' type='text' name='fat' value='<%=  data.report.foods[0].nutrients[1].value%>'>
+			<p>Protein</p>
+			<input id='protein' type='text' name='protein' value='<%= data.report.foods[0].nutrients[0].value %>'>
+
+			<p>Calories</p>
+			<input id='calories' type='text' name='calories' value=''>
+
+			<button type="submit" class="btn btn-primary">Add food</button>
+		</form>
+	</div>
+
+</main>
 
 <script>
 
