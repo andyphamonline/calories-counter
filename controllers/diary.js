@@ -25,14 +25,15 @@ router.get('/', function(req, res) {
 // diary of date page
 
 router.get('/:date', function(req, res) {
-	console.log("user: "+req.session.user+", date: "+req.session.currentDate);
+	console.log("user: "+req.session.user+", date: "+req.params.date);
 	db.log.findAll( {
 		include: [db.nutrient],
 		where: {
 			userId: req.session.user,
-			date: req.query.date
+			date: req.params.date
 		}}).then(function(logs) {
 			if (logs.length) {
+				// render response
 				console.log(logs[0].nutrient);
 			} else {
 				console.log("No logs found!");

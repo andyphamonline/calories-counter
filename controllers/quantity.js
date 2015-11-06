@@ -32,7 +32,10 @@ router.post('/:id', function( req, res) {
 			date: req.session.currentDate,
 			nutrientId: nutrient.id
 		}).then(function(log) {
-			res.redirect('/diary');
+			nutrient.logId = log.id;
+			nutrient.save().then(function() {
+				res.redirect('/diary');
+			});
 		})
 	})
 })

@@ -13,6 +13,7 @@
 		<p>Date: <input name='date' type="text" id="datepicker"></p>
 		<button type='submit'>Add food</button>
 	</form>
+	<button id="log_for_date">Go to log for this date</button>
 
 	<table>
 		<tr>
@@ -58,3 +59,13 @@
 
 
 </main>
+<script>
+$("body").on("click", "#log_for_date", function(e) {
+	e.preventDefault();
+
+	var date = $("#datepicker").val();
+	if (date) {
+		window.location = "/diary/"+date;
+	}
+});
+</script>
