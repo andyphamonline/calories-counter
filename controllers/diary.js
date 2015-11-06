@@ -37,7 +37,6 @@ router.get('/:date', function(req, res) {
 // 	res.redirect('/diary');
 // });
 
-
 //posting to database working
 router.post('/', function(req, res) {
 
