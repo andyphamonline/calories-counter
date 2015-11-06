@@ -40,27 +40,27 @@
 		<tr>
 			<th>Total</th>
 			<td class='caloriesSum'></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td class='carbSum'></td>
+			<td class='fatSum'></td>
+			<td class='proteinSum'></td>
 			<td></td>
 		</tr>
 
 		<tr>
 			<th>Goal</th>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td><%= goal.calories %></td>
+			<td><%= goal.carbGram %></td>
+			<td><%= goal.fatGram %></td>
+			<td><%= goal.proteinGram %></td>
 			<td></td>
 		</tr>
 
 		<tr>
 			<th>Remaining</th>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td class='remainCalories'></td>
+			<td class='remainCarb'></td>
+			<td class='remainFat'></td>
+			<td class='remainProtein'></td>
 			<td></td>
 		</tr>
 
@@ -79,8 +79,22 @@
 		$('.newFood .calories').each(function() {
 			caloriesSum += parseFloat($(this).text());
 		});
+		$('.newFood .carb').each(function() {
+			carbSum += parseFloat($(this).text());
+		});
+		$('.newFood .fat').each(function() {
+			fatSum += parseFloat($(this).text());
+		});
+		$('.newFood .protein').each(function() {
+			proteinSum += parseFloat($(this).text());
+		});
 
-		$('.caloriesSum').attr('value', caloriesSum);
+		$('.caloriesSum').text(caloriesSum);
+		$('.carbSum').text(carbSum);
+		$('.fatSum').text(fatSum);
+		$('.proteinSum').text(proteinSum);
+
+
 
 	});
 

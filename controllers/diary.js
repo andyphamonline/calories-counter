@@ -11,18 +11,31 @@ router.get('/', function(req, res) {
 // diary of date page
 router.get('/:date', function(req, res) {
 	console.log("user: "+req.session.user+", date: "+req.params.date);
-	db.log.findAll( {
+
+	db.user.findById(req.session.user).then(function(user) {
+		console.log('USER ', user.name);
+		goal = {
+			calories: user.calories,
+			carbGram: user.carbGram,
+			fatGram: user.fatGram,
+			proteinGram: user.proteinGram
+		}
+		console.log('GOAL ',goal.calories);
+	}).then(function(){
+		db.log.findAll( {
 		include: [db.nutrient],
 		where: {
 			userId: req.session.user,
 			date: req.params.date
 		}}).then(function(logs) {
 			if (logs.length) {
-				res.render('log', {logs: logs});
+				res.render('log', {logs: logs, goal:goal});
 			} else {
 				alert('No log for this date');
 			}
-		});
+		});	
+	})
+	
 });
 
 // // working post
@@ -40,13 +53,12 @@ router.get('/:date', function(req, res) {
 //posting to database working
 router.post('/', function(req, res) {
 
-	goal = {
-		calories: req.body.calories,
-		carb: req.body.carb,
-		fat: req.body.fat,
-		protein: req.body.protein
-	}
-
+	// goal = {
+	// 	calories: req.body.calories,
+	// 	carb: req.body.carb,
+	// 	fat: req.body.fat,
+	// 	protein: req.body.protein
+	// }
 	db.user.find( {where: {id : req.session.user} }).then(function(user) {
 			user.updateAttributes( {
 				carbGram: req.body.carb,
