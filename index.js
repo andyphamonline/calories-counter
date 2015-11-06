@@ -24,7 +24,7 @@ app.use(flash());
 
 app.use(function(req, res, next) {
 	//take it out when deploy, this line to hardwire session.user to userId = 1
-	req.session.user = 1;
+	// req.session.user = 1;
 	//
 	
   if (req.session.user) {
