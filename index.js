@@ -90,9 +90,7 @@ app.get('/logout', function(req, res) {
 
 app.use('/goal', require('./controllers/goal'));
 
-app.use('/calendar', require('./controllers/calendar'));
-
-app.use('/log', require('./controllers/log'));
+app.use('/diary', require('./controllers/diary'));
 
 app.use('/search', require('./controllers/search'));
 
