@@ -12,6 +12,8 @@ Node app
 ## Technologies used
 * `jQuery`
 * `Google Font`
+*  `SQL`
+*  `PostgreSQL`
 * `Bootstrap`
 * `HTML5`
 * `CSS3`
@@ -20,9 +22,12 @@ Node app
 * `Express`
 * `Font Awesome`
 
+
 ##Approaches
 I created page by page then edit my models along they way to make it work. I use `session` to keep track of user logged in and date selected. Every user has a goal that can be edited. User can also select date & food to add into their log. Then they can look at log of each date that they created. 
 My models relationship are user 1:M nutrient. User 1:M log. Nutrient 1:1 log.
 
 ##Issues
 My wireframe & outline were detail enough so I was struggling with the route of the site.
+
+

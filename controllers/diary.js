@@ -23,7 +23,7 @@ router.get('/:date', function(req, res) {
 		console.log('GOAL ',goal.calories);
 	}).then(function(){
 		db.log.findAll( {
-		include: [db.nutrient],
+		include: [db.nutrient], 
 		where: {
 			userId: req.session.user,
 			date: req.params.date
